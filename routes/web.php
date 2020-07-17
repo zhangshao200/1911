@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/a/add","A\AddController@add");
+Route::get("/user/index","A\AddController@index");
+Route::get("/user/app","A\AddController@app");
+Route::get("/user/add","A\AddController@add");
