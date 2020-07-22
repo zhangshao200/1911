@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/a/add","A\AddController@add");
+Route::middleware('count')->get("/a/add","A\AddController@add");
 Route::get("/user/index","A\AddController@index");
 Route::get("/user/app","A\AddController@app");
 Route::get("/user/add","A\AddController@add");
+Route::get("/user/m","A\AddController@m");
+Route::get("/user/ll","A\AddController@ll");
+Route::get("/user/goods","A\AddController@goods");
