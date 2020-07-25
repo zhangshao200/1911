@@ -21,3 +21,17 @@ Route::get("/user/add","A\AddController@add");
 Route::get("/user/m","A\AddController@m");
 Route::get("/user/ll","A\AddController@ll");
 Route::get("/user/goods","A\AddController@goods");
+Route::get("/add/add","A\BController@add");
+
+
+/**
+ * 签名加密
+ */
+Route::get("/test/status","A\BController@status");
+
+/**
+ * 非对称加密
+ */
+Route::get("/add/ras","A\BController@ras");
+
+Route::get("/test/add","A\BController@ccontent");

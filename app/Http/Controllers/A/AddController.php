@@ -164,4 +164,11 @@ class AddController extends Controller
             echo '<pre>';print_r($goods_info);echo '</pre>';die;
         }
     }
+    public function rea(){
+        $data="安防监控各方可及时";
+        $content=file_get_contents(storage_path());
+        $pub=openssl_get_publickey($content);
+        openssl_public_encrypt($data,$enc_data,$pub);
+
+    }
 }
