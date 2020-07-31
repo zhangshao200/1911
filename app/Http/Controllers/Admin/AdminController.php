@@ -56,7 +56,7 @@ class AdminController extends Controller
             'name' => \request()->input('username'),
             'pass' =>password_hash(\request()->input('password'),PASSWORD_BCRYPT),
             'email' => \request()->input('user_email'),
-            'time' => time()
+            
         ];
         $a = NameModel::insert($data);
 
