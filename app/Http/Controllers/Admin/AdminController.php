@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\PGoodsModel;
 use Illuminate\Http\Request;
 use App\Model\NameModel;
 use Psy\Util\Str;
@@ -56,7 +57,7 @@ class AdminController extends Controller
             'name' => \request()->input('username'),
             'pass' =>password_hash(\request()->input('password'),PASSWORD_BCRYPT),
             'email' => \request()->input('user_email'),
-            
+
         ];
         $a = NameModel::insert($data);
 
@@ -69,4 +70,12 @@ class AdminController extends Controller
         }
 
     }
+
+    //首页查数据
+    public function cha(){
+          $a= PGoodsModel::all();
+          print_r($a);die;
+    }
+
+
 }

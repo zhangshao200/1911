@@ -40,5 +40,7 @@ Route::get("/test/add","A\BController@ccontent");
 Route::prefix('/user')->group(function (){
     Route::post("/index","Admin\AdminController@index");
     Route::post("/reg","Admin\AdminController@reg");
-
+    Route::post("/cha","Admin\AdminController@cha");
+    //详情页
+    Route::any("/desc/{goods_id}","Admin\IndexController@desc");
 });
