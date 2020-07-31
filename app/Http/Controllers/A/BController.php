@@ -92,7 +92,7 @@ class BController extends Controller
         $param2 = [
             'out_trade_no'      => time().mt_rand(111111,999999),
             'product_code'      => 'FAST_INSTANT_TRADE_PAY',
-            'total_amount'      => 0.01,
+            'total_amount'      => 1.00,
             'subject'           => '测试订单-'.Str::random(16),
         ];
 
@@ -104,7 +104,7 @@ class BController extends Controller
             'charset'       => 'utf-8',
             'sign_type'     => 'RSA2',
             'timestamp'     => date('Y-m-d H:i:s'),
-            'version'       => '1.0',
+            'version'       => '1.00',
             'notify_url'    => 'http://1911www.comcto.com/alipay/notify',   // 异步通知
             'biz_content'   => json_encode($param2),
         ];

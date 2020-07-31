@@ -35,3 +35,10 @@ Route::get("/test/status","A\BController@status");
 Route::get("/add/ras","A\BController@ras");
 
 Route::get("/test/add","A\BController@ccontent");
+
+//登录
+Route::prefix('/user')->group(function (){
+    Route::post("/index","Admin\AdminController@index");
+    Route::post("/reg","Admin\AdminController@reg");
+
+});
