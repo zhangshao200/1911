@@ -43,4 +43,6 @@ Route::prefix('/user')->group(function (){
     Route::post("/cha","Admin\AdminController@cha");
     //详情页
     Route::any("/desc/{goods_id}","Admin\IndexController@desc");
+    //评论的添加
+    Route::any("/col","Admin\IndexController@col");
 });
