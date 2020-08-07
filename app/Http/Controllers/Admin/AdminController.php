@@ -36,8 +36,10 @@ class AdminController extends Controller
             $user = TokenModel::insert($data);
             if ($user) {
                 echo '登录成功';
+                return redirect(url('http://www.1911.com/index/index'));
             } else {
                 echo '登录失败';
+
             }
 
 

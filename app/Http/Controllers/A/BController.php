@@ -36,8 +36,6 @@ class BController extends Controller
         $pub_key=openssl_get_publickey($content);
         openssl_public_encrypt($data,$enc_data,$pub_key);
 
-
-
         $priv_key=openssl_get_privatekey(file_get_contents(storage_path('keys/priv.key')));
         openssl_private_decrypt($enc_data,$dec_data,$priv_key);
         echo '解密:' .$dec_data;
@@ -80,6 +78,7 @@ class BController extends Controller
         curl_exec($ch);
         curl_close($ch);
     }
+
     public function pay(Request $request)
     {
         $oid = $request->get('oid');

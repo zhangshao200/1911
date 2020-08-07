@@ -46,3 +46,14 @@ Route::prefix('/user')->group(function (){
     //评论的添加
     Route::any("/col","Admin\IndexController@col");
 });
+Route::prefix('/kaoshi')->group(function (){
+    //注册
+    Route::any("/login","Kaoshi\AdminController@login");
+    //token
+    Route::any("/index","Kaoshi\AdminController@index");
+//token
+    Route::any("/user","Kaoshi\AdminController@user");
+//获取商品的信息
+    Route::any("/token","Kaoshi\AdminController@token");
+
+});

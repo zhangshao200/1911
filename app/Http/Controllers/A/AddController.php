@@ -44,12 +44,13 @@ class AddController extends Controller
         if ($u){
             //生成token接口在把token存入数据库
             $token=Str::random(32);
-
+//            添加token
             $data=[
                 'token'=>$token,
                 'uid'=>$u->id,
                 'expire' => time()+7200
             ];
+//            添加进数据库
                $tid= TokenModel::insertGetId($data);
 
             //验证密码是否正确
@@ -67,13 +68,14 @@ class AddController extends Controller
                     'msg'=> '密码错误请重新填写'
                 ];
             }
-            //返回用户的信息
+
         }else{
             $res=[
                 'error'=>400001,
-                'msg'=> '您填写的用户信息不存在'
+                'msg'=> '您填写的用户信息不存在',
             ];
         }
+        //返回用户的信息
         return $res;
     }
     /**
