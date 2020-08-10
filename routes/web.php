@@ -55,5 +55,9 @@ Route::prefix('/kaoshi')->group(function (){
     Route::any("/user","Kaoshi\AdminController@user");
 //获取商品的信息
     Route::any("/token","Kaoshi\AdminController@token");
-
+    Route::any("/huo","Kaoshi\AdminController@huo");
 });
+
+
+Route::any("/redis/index","A\RedisController@index");
+

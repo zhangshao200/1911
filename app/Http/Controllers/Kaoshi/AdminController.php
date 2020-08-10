@@ -34,7 +34,7 @@ class AdminController extends Controller
             ];
             $add=UserModel::insert($app);
 
-            echo '注册成功,并生成token成功';
+            echo '注册成功,0并生成token成功';
             //跳转到商品页面
            // return redirect(url('/kaoshi/user'));
         }else{
@@ -45,8 +45,10 @@ class AdminController extends Controller
     public function user(){
         return view('kaoshi.user');
     }
+    //token
     public function token(){
         $token=\request()->input('token');
+
         if (empty($token)){
             echo '您的token信息有误';
         }
@@ -56,4 +58,19 @@ class AdminController extends Controller
         return view('kaoshi.index',['goods'=>$goods]);
 
     }
+
+    //获取接口
+    public function huo(){
+        $datd=[
+            'user_name'=>\request()->input('user_name'),
+
+            'user_pwd'=>\request()->input('user_pwd'),
+        ];
+
+        $url="https://route.showapi.com/1827-1";
+        dd($url);
+
+    }
+
+
 }
