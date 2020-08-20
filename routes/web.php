@@ -61,3 +61,14 @@ Route::prefix('/kaoshi')->group(function (){
 
 Route::any("/redis/index","A\RedisController@index");
 
+Route::any("/redis/add","A\IndexController@add");
+Route::any("/index/index","A\IndexController@index");
+Route::any("/index/user","A\IndexController@user");
+Route::any("/get/list","A\IndexController@list");
+Route::any("/get/imgs","A\IndexController@imgs");
+//ajax上传文件
+Route::any("/add/imgs","A\IndexController@adds");
+Route::any("/add/word","A\IndexController@word");
+//token验证
+Route::any("/add","A\IndexController@word");
+Route::any("/user/login","A\TextController@add");

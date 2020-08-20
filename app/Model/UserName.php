@@ -4,9 +4,9 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminModel extends Model
+class UserName extends Model
 {
-    public $table='admin';
-    public $primaryKey='id';
+    public $table='user_pwd';
+    public $primaryKey='user_id';
     public $timestamps=false;
 }

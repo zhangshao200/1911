@@ -16,3 +16,22 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('geturlparam',function (){
+    dump($_GET);
+});
+Route::post('posturlparam',function (){
+    dump($_POST);
+});
+Route::post('upload',function (){
+    dump($_FILES);
+    dump($_POST);
+   dd(\request()->all());
+});
+Route::post('getjson',function (){
+    $data=file_get_contents('php://input');
+    dump($data);
+});
+Route::get('/brand','Api\TextController@brand');
+
+Route::get('/add','Api\TextController@login');
+Route::any('/user/login','Api\TextController@add');
