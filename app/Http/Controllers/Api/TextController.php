@@ -39,6 +39,9 @@ class TextController extends Controller
         $Jwt=Jwt::instance();
         $token=$Jwt->setuid($uid)->getToken();
         dd($token);
-
+   }
+   public function user(){
+        $user=AdminModel::get()->toArray();
+        echo json_encode(['code'=>'00000','msg'=>'ojbk','data'=>$user]);die;
    }
 }

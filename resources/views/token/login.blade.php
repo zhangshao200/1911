@@ -23,9 +23,9 @@
         var user_name=$('input[name=user_name]').val()
         var user_pwd=$('input[name=user_pwd]').val()
         $.post('http://api.com/api/user/login',{user_name:user_name,user_pwd:user_pwd},function (res) {
-              if(res.code=='10001'){
-                  alert(res.msg);
-              }
+            if (res.code=='00001'){
+                alert(res.msg)
+            }
 
         },'json')
     })

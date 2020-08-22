@@ -35,3 +35,11 @@ Route::get('/brand','Api\TextController@brand');
 
 Route::get('/add','Api\TextController@login');
 Route::any('/user/login','Api\TextController@add');
+
+Route::middleware('Jwt')->group(function (){
+    Route::any('/user/info','Api\TextController@user');
+});
+//0822
+Route::any('/admin/admin','Api\AdminController@login');
+Route::any('/admin/index','Api\AdminController@index');
+Route::any('/admin/add','Api\AdminController@add');
