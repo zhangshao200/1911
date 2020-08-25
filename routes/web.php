@@ -70,8 +70,9 @@ Route::get('/', function () {
 Route::any("/add/imgs","A\IndexController@adds");
 Route::any("/add/word","A\IndexController@word");
 //token验证
-Route::any("/add","A\IndexController@word");
-Route::any("/user/login","A\TextController@add");
+Route::any("/add/admin","Api\IndexController@login");
+Route::any("/add","Api\IndexController@word");
+Route::any("/user/login","Api\TextController@add");
 
 Route::any("/user/info","A\TextController@user");
 
@@ -79,3 +80,4 @@ Route::any("/user/info","A\TextController@user");
 Route::any("/admin/admin","A\AdminController@login");
 Route::any("/admin/index","A\AdminController@index");
 Route::any("/admin/add","A\AdminController@add");
+//Route::any("/goods/goods","ADmin\AddController@goods");66

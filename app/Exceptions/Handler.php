@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use App\Exceptions\ApiException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -48,8 +49,13 @@ class Handler extends ExceptionHandler
      *
      * @throws \Exception
      */
-    public function render($request, Exception $exception)
+    public function render($request, $exception)
     {
-        return parent::render($request, $exception);
+//        return parent::render($request,  $exception);
+        if ($exception instanceof  ApiException){
+            echo 'api';
+            dd(123213213);
+        }
+        return  parent::render($request,$exception);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\TextModel;
 use App\Model\AdminModel;
 use App\Common\Auth\Jwt;
+use mysql_xdevapi\Exception;
 
 class TextController extends Controller
 {
@@ -17,6 +18,8 @@ class TextController extends Controller
         return view('token.login');
    }
    public function add(Request $reuest){
+
+
        $user_name=$reuest->user_name;
        if (empty($user_name)){
            echo json_encode(['code'=>'10001','msg'=>'用户名不能为空']);die;

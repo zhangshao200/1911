@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Model\AdminModel;
 use Illuminate\Http\Request;
+use App\Common\Error\Error;
 
 class AdminController extends Controller
 {
@@ -27,10 +28,11 @@ class AdminController extends Controller
 //        dd($data);die;
         $res=AdminModel::insert($data);
         if ($res){
-            return redirect('http://api.com/api/admin/add');
+           return $data=['code'=>'000000','msg'=>'添加成功'];
         }
     }
     public function add(){
         return view('token.login');
     }
 }
+

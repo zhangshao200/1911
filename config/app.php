@@ -226,6 +226,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'api_domain' => env('API_DOMAIN', 'api.cn'),
+        'admin_domain' => env('ADMIN_DOMAIN', 'admin1912.com'),
     ],
 
 ];

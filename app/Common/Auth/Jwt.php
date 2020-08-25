@@ -54,7 +54,8 @@ class Jwt{
     //将字符串token转换成token实例
     public function decode(){
         $token=(new Parser())->parse((string)$this->token);
-        dd($token);
+        $this->uid=$this->decodeToken->getClaim('uid');
+        dd($this->uid);
     }
     //验证token令牌
     public function verify(){
